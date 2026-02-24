@@ -4,14 +4,16 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Flat Rate Calculation",
   description: "Car loan flat rate calculator",
-  manifest: "/site.webmanifest",
+  manifest: "/site.webmanifest?v=2",
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/favicon.png", type: "image/png", sizes: "32x32" },
-      { url: "/icons/icon.svg", type: "image/svg+xml" }
+      { url: "/icons/icon.svg?v=2", type: "image/svg+xml" },
+      { url: "/favicon-32x32.png?v=2", type: "image/png", sizes: "32x32" },
+      { url: "/favicon-16x16.png?v=2", type: "image/png", sizes: "16x16" },
+      { url: "/favicon.ico?v=2", sizes: "any" }
     ],
-    apple: [{ url: "/icons/apple-touch-icon.png", sizes: "180x180" }]
+    shortcut: ["/favicon.ico?v=2"],
+    apple: [{ url: "/icons/apple-touch-icon.png?v=2", sizes: "180x180" }]
   },
   appleWebApp: {
     capable: true,
