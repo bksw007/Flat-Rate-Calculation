@@ -148,8 +148,8 @@ export default function Page() {
   );
 
   const isDark = darkMode;
-  const axisColor = isDark ? "#cbd5e1" : "#475569";
-  const gridColor = isDark ? "rgba(148,163,184,0.18)" : "rgba(148,163,184,0.22)";
+  const axisColor = isDark ? "#c5d5e5" : "#5d6d7e";
+  const gridColor = isDark ? "rgba(159,176,193,0.24)" : "rgba(166,180,200,0.36)";
 
   const structureData = useMemo<ChartData<"doughnut">>(() => {
     const vatTotal = carType === "used" ? carLoan.vatPerMonth * carLoan.months : 0;
@@ -158,7 +158,7 @@ export default function Page() {
       datasets: [
         {
           data: [carLoan.downAmount, carLoan.financeAmount, carLoan.totalInterest, vatTotal],
-          backgroundColor: ["#d97706", "#0ea5e9", "#ef4444", "#94a3b8"],
+          backgroundColor: ["#f4e06e", "#82b4d6", "#ffb7b2", "#d7bde2"],
           borderWidth: 0
         }
       ]
@@ -184,7 +184,7 @@ export default function Page() {
   );
 
   const comparisonData = useMemo<ChartData<"bar">>(() => {
-    const colors = compareTerms.map((term) => (term === carYears ? "#0ea5e9" : "#94a3b8"));
+    const colors = compareTerms.map((term) => (term === carYears ? "#82b4d6" : "#aec6cf"));
     return {
       labels: compareTerms.map((term) => `${term} ปี`),
       datasets: [
@@ -198,8 +198,8 @@ export default function Page() {
           type: "bar",
           label: "ดอกเบี้ยรวม",
           data: comparison.map((item) => item.totalInterest),
-          borderColor: "#ef4444",
-          backgroundColor: "rgba(239, 68, 68, 0.45)",
+          borderColor: "#ffb7b2",
+          backgroundColor: "rgba(255, 183, 178, 0.65)",
           yAxisID: "y1",
           borderWidth: 1
         }
@@ -213,7 +213,7 @@ export default function Page() {
       datasets: [
         {
           data: [homeLoan.downAmount, homeLoan.principal, homeLoan.totalInterest],
-          backgroundColor: ["#d97706", "#0ea5e9", "#ef4444"],
+          backgroundColor: ["#f4e06e", "#82b4d6", "#ffb7b2"],
           borderWidth: 0
         }
       ]
@@ -222,7 +222,7 @@ export default function Page() {
   );
 
   const homeComparisonData = useMemo<ChartData<"bar">>(() => {
-    const colors = homeCompareTerms.map((term) => (term === homeYears ? "#0ea5e9" : "#94a3b8"));
+    const colors = homeCompareTerms.map((term) => (term === homeYears ? "#82b4d6" : "#aec6cf"));
     return {
       labels: homeCompareTerms.map((term) => `${term} ปี`),
       datasets: [
@@ -236,8 +236,8 @@ export default function Page() {
           type: "bar",
           label: "ดอกเบี้ยรวม",
           data: homeComparison.map((item) => item.totalInterest),
-          borderColor: "#ef4444",
-          backgroundColor: "rgba(239, 68, 68, 0.45)",
+          borderColor: "#ffb7b2",
+          backgroundColor: "rgba(255, 183, 178, 0.65)",
           yAxisID: "y1",
           borderWidth: 1
         }
@@ -298,7 +298,7 @@ export default function Page() {
       setIsExporting(true);
       const canvas = await html2canvas(infographicRef.current, {
         scale: 2,
-        backgroundColor: darkMode ? "#020617" : "#f4f7fb"
+        backgroundColor: darkMode ? "#1f2935" : "#f0f4f8"
       });
 
       const link = document.createElement("a");
